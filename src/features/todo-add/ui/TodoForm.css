@@ -1,0 +1,83 @@
+.todo-form {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.todo-form__input {
+  flex: 1;
+  min-width: 0;
+  height: 46px;
+  padding: 0 16px;
+  font-size: 0.96rem;
+  color: var(--color-text-primary);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.todo-form__input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.todo-form__input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-soft);
+}
+
+.todo-form__submit {
+  flex-shrink: 0;
+  height: 46px;
+  padding: 0 20px;
+  font-size: 0.94rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: var(--color-accent);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition:
+    background-color 0.18s ease,
+    transform 0.1s ease,
+    opacity 0.18s ease;
+}
+
+.todo-form__submit:hover:not(:disabled) {
+  background-color: var(--color-accent-hover);
+}
+
+.todo-form__submit:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.todo-form__submit:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.todo-form__submit:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .todo-form {
+    gap: 8px;
+  }
+
+  .todo-form__input {
+    height: 42px;
+    padding: 0 14px;
+    font-size: 0.92rem;
+  }
+
+  .todo-form__submit {
+    height: 42px;
+    padding: 0 16px;
+    font-size: 0.9rem;
+  }
+}
